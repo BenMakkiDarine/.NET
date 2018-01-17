@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51b6e25514f54da78338999b6acb6c10" Name="Diagram1">
+        <EntityTypeShape EntityType="easymissionModel.candidature" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.forum" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.payment" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.promotion" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.reclamation" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.service" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.sujet" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="easymissionModel.user" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="easymissionModel.FKqnf2cjc5d6nflh9ugu76y7f3s" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKfmg6vcrltpd7363yl7amhnjar" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FK77sebv8qwsg71t546s2bpamf2" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKtbn2noipxylxg6vx9wk0xuec1" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FK7s1gf29grmmefqi6husjmmta9" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKnq9xfo1dq6aylhijt5828r9dk" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKkkykscqnjm68fd039vxudbq0f" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKmpi7cc7kgfta4euxfipq5g37t" ManuallyRouted="false" />
+        <AssociationConnector Association="easymissionModel.FKpogokcnqg60rk9cj5uco6ga0x" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

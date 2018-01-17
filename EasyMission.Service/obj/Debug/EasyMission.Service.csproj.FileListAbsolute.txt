@@ -1,0 +1,14 @@
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Service.dll.config
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Service.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Service.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EntityFramework.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EntityFramework.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\obj\Debug\EasyMission.Service.csprojResolveAssemblyReference.cache
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\obj\Debug\EasyMission.Service.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\obj\Debug\EasyMission.Service.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Data.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Domaine.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Data.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Service\bin\Debug\EasyMission.Domaine.pdb

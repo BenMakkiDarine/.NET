@@ -1,0 +1,144 @@
+﻿@model GUI.Models.OffreModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- link top -->
+    <div class="bg-color2 block-section-xs line-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div>Job details :</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right"><a href="#">&laquo; Go back to job listings</a></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end link top -->
+
+    <div class="bg-color2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+
+                    <!-- box item details -->
+                    <div class="block-section box-item-details">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a href="company_page.html"><img src="./assets/theme/images/patner/4.png" alt=""></a>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="text-right"><a href="#">Go to our website &raquo;</a></p>
+                            </div>
+                        </div>
+
+                        <h2 class="title"><a href="#">@Html.DisplayFor(x=>x.offre.title)</a></h2>
+                        <div class="job-meta">
+                            <ul class="list-inline">
+                                <li><i class="fa fa-briefcase"></i> @Html.DisplayFor(x => x.offre.typeOffre)</li>
+                                <li><i class="fa fa-map-marker"></i> @Html.DisplayFor(x => x.offre.location)</li>
+                                <li><i class="fa fa-money"></i>@Html.DisplayFor(x => x.offre.budget) DT</li>
+                            </ul>
+                        </div>
+                        <p>
+                            @Html.DisplayFor(x => x.offre.description)
+                          </p>
+                    </div><!-- end box item details -->
+
+                </div>
+                <div class="col-md-3">
+
+                    <!-- box affix right -->
+                    <div class="block-section " id="affix-box">
+                        <div class="text-right">
+                            <p><a href="#" class="btn btn-theme btn-line dark btn-block-xs">Aplly WIth Linkedin</a></p>
+                            <p><a href="#modal-apply" data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Apply This Job</a></p>
+                            <p><a href="#" class="btn btn-theme btn-t-primary btn-block-xs">Login to Save This Job</a></p>
+                            <p><a href="#map-toogle" id="btn-map-toogle" data-toggle="collapse" class="btn btn-theme btn-t-primary btn-block-xs">Ofice Location</a></p>
+                            <p>Share This Job <span class="space-inline-10"></span> :</p>
+                            <p class="share-btns">
+                                <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fa fa-envelope"></i></a>
+                            </p>
+                        </div>
+                    </div><!-- box affix right -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- block map -->
+    <div class="collapse" id="map-toogle">
+        <div class="bg-color2" id="map-area">
+            <div class="container">
+                <div class="marker-description">
+                    <div class="inner">
+                        <h4 class="no-margin-top">Office Location</h4>
+                        Central Jakarta No 1234, Jakarta, Indonesia
+                    </div>
+                </div>
+            </div>
+            <div class="map-area-detail">
+                <!-- change data  lat abd lng here -->
+                <div class="box-map-detail" id="map-detail-job" data-lat="48.856318" data-lng="2.351866"></div>
+            </div>
+        </div>
+    </div><!-- end block map -->
+    <!-- modal apply -->
+    <div class="modal fade" id="modal-apply">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+              @using (Html.BeginForm("Details", "Offre",FormMethod.Post, new { enctype = "multipart/form-data" }))
+              {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="modal-header ">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Apply</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="form-group">
+                            <label>Price</label>
+                            @Html.EditorFor(x => x.candidature.price, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Tell us why you better?</label>
+                            @Html.EditorFor(x => x.candidature.description, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <label>Your Resume</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <span class="btn btn-default btn-theme btn-file">
+                                        <input type="file" name="FileUpload" />
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control form-flat" readonly>
+                            </div>
+                            <small>Upload your CV/resume. Max. file size: 24 MB.</small>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success btn-theme">Send Application</button>
+                    </div>
+                }
+                        </div>
+        </div>
+    </div><!-- end modal  apply -->
+</div><!--end body-content -->

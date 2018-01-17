@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background"
+       />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/icon1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingBottom="40dip"
+            android:paddingTop="40dip"
+            android:layout_marginLeft="20dp"
+            android:background="#0b40bc"
+            android:layout_marginTop="30dp"
+            android:shape="rectangle"/>
+
+        <EditText
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/background_light"
+            android:hint="text1"
+            android:paddingBottom="13dip"
+            android:paddingTop="13dp"
+            android:paddingLeft="15dp"
+            android:layout_toRightOf="@+id/icon1"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:id="@+id/icon2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingBottom="40dip"
+            android:paddingTop="40dip"
+            android:layout_marginLeft="20dp"
+            android:background="#0b40bc"
+            android:layout_below="@+id/icon1"
+            android:layout_marginTop="30dp"
+            />
+
+        <EditText
+            android:id="@+id/text2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/background_light"
+            android:hint="text2"
+            android:paddingBottom="13dip"
+            android:paddingTop="13dp"
+            android:paddingLeft="15dp"
+            android:layout_below="@+id/text1"
+            android:layout_toRightOf="@+id/icon2"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:id="@+id/icon3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingBottom="40dip"
+            android:paddingTop="40dip"
+            android:layout_marginLeft="20dp"
+            android:background="#0b40bc"
+            android:layout_below="@+id/icon2"
+            android:layout_marginTop="30dp"
+            />
+
+        <EditText
+            android:id="@+id/text3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/background_light"
+            android:hint="text3"
+            android:paddingBottom="13dip"
+            android:paddingTop="13dp"
+            android:paddingLeft="15dp"
+            android:layout_below="@+id/text2"
+            android:layout_toRightOf="@+id/icon3"
+            android:layout_marginRight="20dp"/>
+
+        
+    </RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <Button
+            android:id="@+id/btnAnnuler"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="35px"
+            android:layout_marginTop="50dp"
+            android:text="Annuler"
+            android:background="#3c3c3c"
+            android:textColor="#f7f7f7"
+            />
+        <Button
+            android:id="@+id/btnAjouter"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/btnAnnuler"
+            android:layout_marginLeft="40px"
+            android:background="#0b40bc"
+            android:textColor="#f7f7f7"
+            android:layout_marginTop="49dp"
+            android:text="Ajouter" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+</ScrollView>

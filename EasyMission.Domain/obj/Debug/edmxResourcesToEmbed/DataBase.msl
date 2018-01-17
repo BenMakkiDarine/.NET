@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="easymissionModelStoreContainer" CdmEntityContainer="easymissionEntities1">
+    <EntitySetMapping Name="candidatures">
+      <EntityTypeMapping TypeName="easymissionModel.candidature">
+        <MappingFragment StoreEntitySet="candidature">
+          <ScalarProperty Name="idCandidature" ColumnName="idCandidature" />
+          <ScalarProperty Name="cv" ColumnName="cv" />
+          <ScalarProperty Name="dateSubmit" ColumnName="dateSubmit" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fora">
+      <EntityTypeMapping TypeName="easymissionModel.forum">
+        <MappingFragment StoreEntitySet="forum">
+          <ScalarProperty Name="idForum" ColumnName="idForum" />
+          <ScalarProperty Name="nomForum" ColumnName="nomForum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="easymissionModel.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="idPayment" ColumnName="idPayment" />
+          <ScalarProperty Name="datePayment" ColumnName="datePayment" />
+          <ScalarProperty Name="valeur" ColumnName="valeur" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="promotions">
+      <EntityTypeMapping TypeName="easymissionModel.promotion">
+        <MappingFragment StoreEntitySet="promotion">
+          <ScalarProperty Name="idPromotion" ColumnName="idPromotion" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reclamations">
+      <EntityTypeMapping TypeName="easymissionModel.reclamation">
+        <MappingFragment StoreEntitySet="reclamation">
+          <ScalarProperty Name="idReclamtion" ColumnName="idReclamtion" />
+          <ScalarProperty Name="dateSubmit" ColumnName="dateSubmit" />
+          <ScalarProperty Name="sujet" ColumnName="sujet" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="services">
+      <EntityTypeMapping TypeName="easymissionModel.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="idService" ColumnName="idService" />
+          <ScalarProperty Name="categorieService" ColumnName="categorieService" />
+          <ScalarProperty Name="nomService" ColumnName="nomService" />
+          <ScalarProperty Name="payment_idPayment" ColumnName="payment_idPayment" />
+          <ScalarProperty Name="promotion_idPromotion" ColumnName="promotion_idPromotion" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sujets">
+      <EntityTypeMapping TypeName="easymissionModel.sujet">
+        <MappingFragment StoreEntitySet="sujet">
+          <ScalarProperty Name="idSujet" ColumnName="idSujet" />
+          <ScalarProperty Name="dateSujet" ColumnName="dateSujet" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nomSujet" ColumnName="nomSujet" />
+          <ScalarProperty Name="typeSujet" ColumnName="typeSujet" />
+          <ScalarProperty Name="forum_idForum" ColumnName="forum_idForum" />
+          <ScalarProperty Name="user_idUser" ColumnName="user_idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="easymissionModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="competence" ColumnName="competence" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

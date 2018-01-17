@@ -1,0 +1,266 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+@if (Request.IsAuthenticated)
+{
+    if (@ViewData["Role"] != null)
+    {
+
+
+        if (@ViewData["Role"].Equals("Admin"))
+        {
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("List Users", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("List Talented User", "FindResumeAll", "ListUsers", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li><a href="/ListUsers/Chat/Web">Web Room</a></li>
+                <li><a href="/ListUsers/Chat/Web">Mobile Room</a></li>
+                <li><a href="/Forum/TacheAvance1">List Comment of User which comments on a service</a></li>
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Service <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Add Service", "Create", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("List Service", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                 <li><a href="/Service/TacheAvance1">List High Demanded Service</a></li>
+                <li><a href="/Service/TacheAvance2">List High Demanded Agent by Service</a></li>
+
+             </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Promotion <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="/Promotion/Create">Add Promotion</a></li>
+                <li><a href="/Promotion/Index">List Promotion</a></li>
+                <li><a href="/Promotion/TacheAvance1">List Promotion by date promotion a user</a></li>
+
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Candidature <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="/Candidature/Index">List Candidature</a></li>
+                <li><a href="/Candidature/promotionCandidatures">List Promotion by date promotion a user</a></li>
+                <li><a href="/Candidature/CandidatureAccepted">List Accepted Candidature</a></li>
+
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">List User <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("List Clients", "Client", "ListUsers", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("List Agents", "Agent", "ListUsers", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Reclamation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+
+                <li><a href="/Reclamation/Create">Add Reclamation</a></li>
+                <li><a href="/Reclamation/Index">List Reclamation</a></li>
+
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Stat <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+
+                <li><a href="/Forum/Stat">Stat Forum</a></li>
+                <li><a href="/Reclamation/Stat">Stat Reclamation</a></li>
+                <li><a href="/Candidature/Stat">Stat Candidature</a></li>
+                <li><a href="/Promotion/Stat">Stat Promotion</a></li>
+                <li><a href="/Service/Stat">Stat Service</a></li>
+
+            
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Offre <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Create Offre", "Create", "Offre", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+            </ul>
+        </li>
+
+        }
+        if (@ViewData["Role"].Equals("Client"))
+        {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Client <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Approuvez/Disaprouvez", "Index", "Candidature", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Candidature <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/Candidature/Index">List Candidature</a></li>
+                    <li><a href="/Promotion/promotionCandidatures">List Promotion by date promotion a user</a></li>
+                    <li><a href="/Promotion/CandidatureAccepted">List Accepted Candidature</a></li>
+
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Service <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Add Service", "Create", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li>@Html.ActionLink("List Service", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Service<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("List Service", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Offre<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Add Offre", "Create", "Offre", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                </ul>
+            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                    <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Reclamation <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                   <li><a href="/Reclamation/Create">Add Reclamation</a></li>
+                                    <li><a href="/Reclamation/Index">List Reclamation</a></li>
+                                 
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                    <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Offre <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Create Offre", "Create", "Offre", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                                </ul>
+                            </li>
+
+        }
+        if (@ViewData["Role"].Equals("Agent"))
+        {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Agent <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Approuvez/Disaprouvez", "Create", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Candidature <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/Candidature/Index">List Candidature</a></li>
+                    <li><a href="/Promotion/promotionCandidatures">List Promotion by date promotion a user</a></li>
+                    <li><a href="/Promotion/CandidatureAccepted">List Accepted Candidature</a></li>
+
+
+                </ul>
+            </li>
+            <li>@Html.ActionLink("Find Job", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+          
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Reclamation <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+
+                    <li><a href="/Reclamation/Create">Add Reclamation</a></li>
+                    <li><a href="/Reclamation/Index">List Reclamation</a></li>
+                  
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                </ul>
+            </li>
+
+        }
+    }
+
+    else
+    {
+        <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+        <li class=""><a href="Personel/Profiles"><strong>Find Resumes</strong></a></li>
+        <li class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Pages <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Add Service", "Create", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                    <li>@Html.ActionLink("List Service", "Index", "Service", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                                    <li><a href="error_404.html">Error 404</a></li>
+                                    <li><a href="shortcode.html">Short Code</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Forum <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Open Discussion", "Create", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                    <li>@Html.ActionLink("Discussions", "Index", "Forum", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+                                </ul>
+                            </li>
+
+
+    }
+
+
+
+
+}
+else
+{
+
+
+   
+}

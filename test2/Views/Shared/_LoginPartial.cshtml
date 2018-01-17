@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="#" class="link-profile dropdown-toggle" data-toggle="dropdown">
+            <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"> @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+ <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="my_alerts.html"> My Alerts </a></li>
+            <li><a href="my_notifications.html"> Notifications <span class="badge ">5</span></a></li>
+            <li><a href="change_password.html"> Change Password</a></li>
+        </ul>
+    </li>
+    <li class="link-btn"><a href="javascript:document.getElementById('logoutForm').submit()"><span class="btn btn-theme  btn-pill btn-xs btn-line">Logout</span></a></li>
+</ul>
+   
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+
+        <li class="link-btn"><a href="Account/Login"><span class="btn btn-theme btn-pill btn-xs btn-line">Login</span></a></li>
+        <li class="link-btn"><a href="Account/Register"><span class="btn btn-theme  btn-pill btn-xs btn-line">Register</span></a></li>
+
+          </ul>
+}

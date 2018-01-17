@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EasyMission.Domaine.promotion>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- blog block -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- blog list -->
+                    <div class="blog-list">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date Debut</th>
+                <th>Date Fin</th>
+                <th>Description</th>
+                <th>Service</th>
+
+                <th class="text-right">More informations</th>
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model)
+{
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.idPromotion)</th>
+                <td>@Html.DisplayFor(modelItem => item.dateDebut)</td>
+                <td>@Html.DisplayFor(modelItem => item.dateFin)</td>
+                <td>@Html.DisplayFor(modelItem => item.description)</td>
+                <td>@Html.DisplayFor(modelItem => item.service.nomService)</td>
+
+                <td class="text-right"><a href="/Promotion/Edit/@Html.DisplayFor(modelItem => item.idPromotion)" class="btn btn-theme btn-xs btn-default">Edit</a></td>
+                <td class="text-right"><a href="/Promotion/Delete/@Html.DisplayFor(modelItem => item.idPromotion)" class="btn btn-theme btn-xs btn-default">Delete</a></td>
+
+            </tr>
+
+}
+        </tbody>
+
+    </table>
+
+                    </div><!-- end blog list -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog block -->
+</div><!--end body-content -->

@@ -1,0 +1,14 @@
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.ServicePattern.dll.config
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.ServicePattern.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.ServicePattern.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.Data.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.Domaine.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EntityFramework.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.Data.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EasyMission.Domaine.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\EntityFramework.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\obj\Debug\EasyMission.ServicePattern.csprojResolveAssemblyReference.cache
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\obj\Debug\EasyMission.ServicePattern.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.ServicePattern\obj\Debug\EasyMission.ServicePattern.pdb

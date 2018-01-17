@@ -1,0 +1,53 @@
+﻿@model   IEnumerable<EasyMission.Domaine.candidature>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- blog block -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- blog list -->
+                    <div class="blog-list">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>description</th>
+                <th>Date Submit</th>
+                <th>Status</th>
+                <th>Agent</th>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model)
+{
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.description)</th>
+                <td>@Html.DisplayFor(modelItem =>item.dateSubmit)</td>
+                <td>@Html.DisplayFor(modelItem => item.status)</td>
+                <td>@Html.DisplayFor(modelItem => item.aspnetuser.Name)</td>
+
+              </tr>
+
+}
+        </tbody>
+
+    </table>
+
+                    </div><!-- end blog list -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog block -->
+</div><!--end body-content -->

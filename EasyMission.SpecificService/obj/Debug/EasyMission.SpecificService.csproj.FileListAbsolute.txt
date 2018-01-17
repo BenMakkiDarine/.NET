@@ -1,0 +1,32 @@
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.dll.config
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Data.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Domaine.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.ServicePattern.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EntityFramework.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Data.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Domaine.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.ServicePattern.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\EntityFramework.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.csprojResolveAssemblyReference.cache
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.pdb
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.dll.config
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.SpecificService.pdb
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Data.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Domaine.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.ServicePattern.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EntityFramework.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Data.pdb
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.Domaine.pdb
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EasyMission.ServicePattern.pdb
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\EntityFramework.xml
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.csprojResolveAssemblyReference.cache
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.dll
+C:\Users\Darine\Desktop\EasyMission\EasyMission.SpecificService\obj\Debug\EasyMission.SpecificService.pdb

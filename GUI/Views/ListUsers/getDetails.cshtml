@@ -1,0 +1,65 @@
+﻿@model EasyMission.Domaine.aspnetuser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- link top -->
+    <div class="bg-color2 block-section-xs line-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <div>Resume details :</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right"><a href="#">&laquo; Go back to resume listings</a></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end link top -->
+
+    <div class="bg-color2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+
+                    <!-- box item details -->
+                    <div class="block-section box-item-details">
+                        <div class="resume-block">
+                            <div class="img-profile"><img src="~/Images/@Html.DisplayFor(x => x.ImagePath)" alt=""></div>
+                            <div class="desc">
+                                <h2>@Html.DisplayFor(x=>x.Name) has Reclamation : @ViewData["Count"]</h2>
+                                <h4>@Html.DisplayFor(x=>x.Email)</h4>
+
+                                <h3 class="resume-sub-title"><span>Cv</span></h3>
+
+                                <h5>Title <span class="color-white-mute"> @Html.DisplayFor(x => x.cvs.First().title)</span></h5>
+                                <h5>Specialite <span class="color-white-mute">@Html.DisplayFor(x => x.cvs.First().specialite)</span></h5>
+                                <h5>Description :</h5>
+                                <p>@Html.DisplayFor(x => x.cvs.First().description) </p>
+                               
+                            </div>
+                        </div>
+                    </div><!-- end box item details -->
+
+
+                </div>
+                <div class="col-md-3">
+
+                    <!-- box affix right -->
+                    <div class="block-section " id="affix-box">
+                        <div class="text-right">
+                            <p><a href="/ListUsers/Bloquer/@Html.DisplayFor(x=>x.Id)" data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Bloquer 1 jour</a></p>
+                            <p><a href="/ListUsers/Bloquer30/@Html.DisplayFor(x=>x.Id)" class="btn btn-theme btn-t-primary btn-block-xs">Bloquer 30 jours</a></p>
+                           
+                        </div>
+                    </div><!-- box affix right -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div><!--end body-content -->

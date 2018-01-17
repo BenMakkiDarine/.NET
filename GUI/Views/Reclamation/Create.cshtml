@@ -1,0 +1,78 @@
+﻿@model EasyMission.Domaine.reclamation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- body-content -->
+<div class="body-content clearfix">
+
+    <div class="bg-color2 block-section line-bottom">
+        <div class="container">
+            <h1 class="text-center no-margin">Add Reclamation</h1>
+        </div>
+    </div>
+
+    <div class="bg-color1 block-section line-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <!-- form post a job -->
+@using (Html.BeginForm("Create", "Reclamation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            <label>Reclamation Subject</label>
+                            @Html.TextAreaFor(model => model.sujet, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Illustration</label>
+                            <input type="file" class="form-control " name="Upload">
+                        </div>
+                        <div class="form-group">
+                            <label>Service</label>
+                            @Html.DropDownListFor(x => x.idUserRec, (SelectList)ViewData["Category"], "-----Select a User-------")
+                        </div>
+
+
+
+
+                        <div class="form-group ">
+                            <button class="btn btn-t-primary btn-theme">Continue</button>
+                        </div>
+
+
+}                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end body-content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

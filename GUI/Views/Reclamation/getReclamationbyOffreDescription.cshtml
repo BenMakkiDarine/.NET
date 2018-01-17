@@ -1,0 +1,133 @@
+﻿@model IEnumerable<EasyMission.Domaine.reclamation>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- body-content -->
+<div class="body-content clearfix">
+
+    <div class="bg-color1">
+        <div class="container">
+
+            <div class="col-md-9 col-sm-9">
+                <div class="block-section box-side-account">
+                    <h3 class="no-margin-top">Reclamation</h3>
+                    <hr />
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date Reclamation</th>
+                                    <th>User</th>
+                                    <th>Sujet</th>
+                                    <th>User Issue</th>
+
+                                    <th>File</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+@foreach (var item in Model)
+{
+                                <tr>
+                                    <th scope="row">@Html.DisplayFor(modelItem => item.idReclamtion)</th>
+                                    <td>@Html.DisplayFor(modelItem => item.dateSubmit)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.aspnetuser.Email)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.sujet)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.aspnetuser1.Email)</td>
+
+                                    <td><a href="~/Reclamations/@Html.DisplayFor(modelItem => item.reclamationPath)" download>Download</a></td>
+                                  @if (ViewData["Role"].Equals("Admin"))
+                                  {
+                                        <td class="text-right"><a href="Bloquer/@Html.DisplayFor(modelItem => item.idUserRec)" class="btn btn-theme btn-xs btn-default">bloquer 1 minutes</a></td>
+                                    <td class="text-right"><a href="Bloquer30/@Html.DisplayFor(modelItem => item.idUserRec)" class="btn btn-theme btn-xs btn-default">bloquer 30 minutes</a></td>
+                                    <td class="text-right"><a href="Bloquer60/@Html.DisplayFor(modelItem => item.idUserRec)" class="btn btn-theme btn-xs btn-default">bloquer 60 minutes</a></td>
+
+                                  }
+                                  else
+                                  {
+
+                                    <td class="text-right"><a href="/Reclamation/Edit/@Html.DisplayFor(modelItem => item.idReclamtion)" class="btn btn-theme btn-xs btn-default">Modifier</a></td>
+                                    <td class="text-right"><a href="/Reclamation/Delete/@Html.DisplayFor(modelItem => item.idReclamtion)" class="btn btn-theme btn-xs btn-default">Supprimer</a></td>
+
+                                  }
+
+                                    </tr>
+
+}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- pagination -->
+                    <nav>
+                        <ul class="pagination pagination-theme  ">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&larr;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&rarr;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav><!-- pagination -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Advanced search -->
+    <div class="modal fade" id="modal-advanced">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <form action="/Reclamation/getReclamationAdvanced">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Advanced Resume Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Find resumes with</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Lister par specialite du Agent</label>
+                                    <input type="text" class="form-control " name="keyword">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Lister par specialite de l'offre et afficher les offres</label>
+                                    <input type="text" class="form-control " name="title">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="white-space-10"></div>
+                        <h5>Education</h5>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-theme" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success btn-theme">Find Resumes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- end modal Advanced search -->
+
+</div><!--end body-content -->
+
+

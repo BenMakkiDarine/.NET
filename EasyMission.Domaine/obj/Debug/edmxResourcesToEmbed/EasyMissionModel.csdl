@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="easymissionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="easymissionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__migrationhistory" EntityType="easymissionModel.C__migrationhistory" />
+    <EntitySet Name="aspnetroles" EntityType="easymissionModel.aspnetrole" />
+    <EntitySet Name="aspnetuserclaims" EntityType="easymissionModel.aspnetuserclaim" />
+    <EntitySet Name="aspnetuserlogins" EntityType="easymissionModel.aspnetuserlogin" />
+    <EntitySet Name="aspnetusers" EntityType="easymissionModel.aspnetuser" />
+    <EntitySet Name="candidatures" EntityType="easymissionModel.candidature" />
+    <EntitySet Name="commentaires" EntityType="easymissionModel.commentaire" />
+    <EntitySet Name="cvs" EntityType="easymissionModel.cv" />
+    <EntitySet Name="feedbacks" EntityType="easymissionModel.feedback" />
+    <EntitySet Name="offres" EntityType="easymissionModel.offre" />
+    <EntitySet Name="payments" EntityType="easymissionModel.payment" />
+    <EntitySet Name="promotions" EntityType="easymissionModel.promotion" />
+    <EntitySet Name="reclamations" EntityType="easymissionModel.reclamation" />
+    <EntitySet Name="services" EntityType="easymissionModel.service" />
+    <EntitySet Name="sujets" EntityType="easymissionModel.sujet" />
+    <EntitySet Name="users" EntityType="easymissionModel.user" />
+    <AssociationSet Name="FK_aspnetuserclaims_aspnetusers_UserId" Association="easymissionModel.FK_aspnetuserclaims_aspnetusers_UserId">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="aspnetuserclaim" EntitySet="aspnetuserclaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnetuserlogins_aspnetusers_UserId" Association="easymissionModel.FK_aspnetuserlogins_aspnetusers_UserId">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="aspnetuserlogin" EntitySet="aspnetuserlogins" />
+    </AssociationSet>
+    <AssociationSet Name="a" Association="easymissionModel.a">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="cv" EntitySet="cvs" />
+    </AssociationSet>
+    <AssociationSet Name="candidature_ibfk_100" Association="easymissionModel.candidature_ibfk_100">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="candidature" EntitySet="candidatures" />
+    </AssociationSet>
+    <AssociationSet Name="commentaire_ibfk_2" Association="easymissionModel.commentaire_ibfk_2">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="commentaire" EntitySet="commentaires" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_ibfk_2" Association="easymissionModel.feedback_ibfk_2">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="feedback" EntitySet="feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_name" Association="easymissionModel.fk_name">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="cv" EntitySet="cvs" />
+    </AssociationSet>
+    <AssociationSet Name="FKkkykscqnjm68fd039vxudbq0f" Association="easymissionModel.FKkkykscqnjm68fd039vxudbq0f">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="reclamation" EntitySet="reclamations" />
+    </AssociationSet>
+    <AssociationSet Name="FKmpi7cc7kgfta4euxfipq5g37t" Association="easymissionModel.FKmpi7cc7kgfta4euxfipq5g37t">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="service" EntitySet="services" />
+    </AssociationSet>
+    <AssociationSet Name="FKnq9xfo1dq6aylhijt5828r9dk" Association="easymissionModel.FKnq9xfo1dq6aylhijt5828r9dk">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="promotion" EntitySet="promotions" />
+    </AssociationSet>
+    <AssociationSet Name="FKpogokcnqg60rk9cj5uco6ga0x" Association="easymissionModel.FKpogokcnqg60rk9cj5uco6ga0x">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="sujet" EntitySet="sujets" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_1" Association="easymissionModel.offre_ibfk_1">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="offre" EntitySet="offres" />
+    </AssociationSet>
+    <AssociationSet Name="reclamation_ibfk_1" Association="easymissionModel.reclamation_ibfk_1">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="reclamation" EntitySet="reclamations" />
+    </AssociationSet>
+    <AssociationSet Name="candidature_ibfk_200" Association="easymissionModel.candidature_ibfk_200">
+      <End Role="offre" EntitySet="offres" />
+      <End Role="candidature" EntitySet="candidatures" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_ibfk_1" Association="easymissionModel.feedback_ibfk_1">
+      <End Role="service" EntitySet="services" />
+      <End Role="feedback" EntitySet="feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_2" Association="easymissionModel.offre_ibfk_2">
+      <End Role="service" EntitySet="services" />
+      <End Role="offre" EntitySet="offres" />
+    </AssociationSet>
+    <AssociationSet Name="FKtbn2noipxylxg6vx9wk0xuec1" Association="easymissionModel.FKtbn2noipxylxg6vx9wk0xuec1">
+      <End Role="user" EntitySet="users" />
+      <End Role="payment" EntitySet="payments" />
+    </AssociationSet>
+    <AssociationSet Name="promotion_ibfk_1" Association="easymissionModel.promotion_ibfk_1">
+      <End Role="service" EntitySet="services" />
+      <End Role="promotion" EntitySet="promotions" />
+    </AssociationSet>
+    <AssociationSet Name="aspnetuserroles" Association="easymissionModel.aspnetuserroles">
+      <End Role="aspnetrole" EntitySet="aspnetroles" />
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+    </AssociationSet>
+    <EntitySet Name="fora" EntityType="easymissionModel.forum" />
+    <AssociationSet Name="aaaForum" Association="easymissionModel.aaaForum">
+      <End Role="aspnetuser" EntitySet="aspnetusers" />
+      <End Role="forum" EntitySet="fora" />
+    </AssociationSet>
+    <AssociationSet Name="commentaire_ibfk_1" Association="easymissionModel.commentaire_ibfk_1">
+      <End Role="forum" EntitySet="fora" />
+      <End Role="commentaire" EntitySet="commentaires" />
+    </AssociationSet>
+    <AssociationSet Name="FKfmg6vcrltpd7363yl7amhnjar" Association="easymissionModel.FKfmg6vcrltpd7363yl7amhnjar">
+      <End Role="forum" EntitySet="fora" />
+      <End Role="sujet" EntitySet="sujets" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__migrationhistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="aspnetrole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetusers" Relationship="easymissionModel.aspnetuserroles" FromRole="aspnetrole" ToRole="aspnetuser" />
+  </EntityType>
+  <EntityType Name="aspnetuserclaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ClaimValue" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FK_aspnetuserclaims_aspnetusers_UserId" FromRole="aspnetuserclaim" ToRole="aspnetuser" />
+  </EntityType>
+  <EntityType Name="aspnetuserlogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FK_aspnetuserlogins_aspnetusers_UserId" FromRole="aspnetuserlogin" ToRole="aspnetuser" />
+  </EntityType>
+  <EntityType Name="aspnetuser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuserclaims" Relationship="easymissionModel.FK_aspnetuserclaims_aspnetusers_UserId" FromRole="aspnetuser" ToRole="aspnetuserclaim" />
+    <NavigationProperty Name="aspnetuserlogins" Relationship="easymissionModel.FK_aspnetuserlogins_aspnetusers_UserId" FromRole="aspnetuser" ToRole="aspnetuserlogin" />
+    <NavigationProperty Name="cvs" Relationship="easymissionModel.a" FromRole="aspnetuser" ToRole="cv" />
+    <NavigationProperty Name="candidatures" Relationship="easymissionModel.candidature_ibfk_100" FromRole="aspnetuser" ToRole="candidature" />
+    <NavigationProperty Name="commentaires" Relationship="easymissionModel.commentaire_ibfk_2" FromRole="aspnetuser" ToRole="commentaire" />
+    <NavigationProperty Name="feedbacks" Relationship="easymissionModel.feedback_ibfk_2" FromRole="aspnetuser" ToRole="feedback" />
+    <NavigationProperty Name="cvs1" Relationship="easymissionModel.fk_name" FromRole="aspnetuser" ToRole="cv" />
+    <NavigationProperty Name="reclamations" Relationship="easymissionModel.FKkkykscqnjm68fd039vxudbq0f" FromRole="aspnetuser" ToRole="reclamation" />
+    <NavigationProperty Name="services" Relationship="easymissionModel.FKmpi7cc7kgfta4euxfipq5g37t" FromRole="aspnetuser" ToRole="service" />
+    <NavigationProperty Name="promotions" Relationship="easymissionModel.FKnq9xfo1dq6aylhijt5828r9dk" FromRole="aspnetuser" ToRole="promotion" />
+    <NavigationProperty Name="sujets" Relationship="easymissionModel.FKpogokcnqg60rk9cj5uco6ga0x" FromRole="aspnetuser" ToRole="sujet" />
+    <NavigationProperty Name="offres" Relationship="easymissionModel.offre_ibfk_1" FromRole="aspnetuser" ToRole="offre" />
+    <NavigationProperty Name="reclamations1" Relationship="easymissionModel.reclamation_ibfk_1" FromRole="aspnetuser" ToRole="reclamation" />
+    <NavigationProperty Name="aspnetroles" Relationship="easymissionModel.aspnetuserroles" FromRole="aspnetuser" ToRole="aspnetrole" />
+    <NavigationProperty Name="fora" Relationship="easymissionModel.aaaForum" FromRole="aspnetuser" ToRole="forum" />
+  </EntityType>
+  <EntityType Name="candidature">
+    <Key>
+      <PropertyRef Name="idCandidature" />
+    </Key>
+    <Property Name="idCandidature" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idOffre" Type="Int32" />
+    <Property Name="idUser" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Single" />
+    <Property Name="dateSubmit" Type="DateTime" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cvPAth" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.candidature_ibfk_100" FromRole="candidature" ToRole="aspnetuser" />
+    <NavigationProperty Name="offre" Relationship="easymissionModel.candidature_ibfk_200" FromRole="candidature" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="commentaire">
+    <Key>
+      <PropertyRef Name="commentaireId" />
+    </Key>
+    <Property Name="commentaireId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idForum" Type="Int32" Nullable="false" />
+    <Property Name="idUser" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="message" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.commentaire_ibfk_2" FromRole="commentaire" ToRole="aspnetuser" />
+    <NavigationProperty Name="forum" Relationship="easymissionModel.commentaire_ibfk_1" FromRole="commentaire" ToRole="forum" />
+  </EntityType>
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="idCv" />
+    </Key>
+    <Property Name="idCv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="specialite" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.a" FromRole="cv" ToRole="aspnetuser" />
+    <NavigationProperty Name="aspnetuser1" Relationship="easymissionModel.fk_name" FromRole="cv" ToRole="aspnetuser" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="idFeedBack" />
+    </Key>
+    <Property Name="idFeedBack" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="idUser" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="idService" Type="Int32" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.feedback_ibfk_2" FromRole="feedback" ToRole="aspnetuser" />
+    <NavigationProperty Name="service" Relationship="easymissionModel.feedback_ibfk_1" FromRole="feedback" ToRole="service" />
+  </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="idOffre" />
+    </Key>
+    <Property Name="idOffre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="typeOffre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="budget" Type="Single" Nullable="false" />
+    <Property Name="idUser" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="idService" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.offre_ibfk_1" FromRole="offre" ToRole="aspnetuser" />
+    <NavigationProperty Name="candidatures" Relationship="easymissionModel.candidature_ibfk_200" FromRole="offre" ToRole="candidature" />
+    <NavigationProperty Name="service" Relationship="easymissionModel.offre_ibfk_2" FromRole="offre" ToRole="service" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="idPayment" />
+    </Key>
+    <Property Name="idPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datePayment" Type="DateTime" />
+    <Property Name="valeur" Type="Single" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="easymissionModel.FKtbn2noipxylxg6vx9wk0xuec1" FromRole="payment" ToRole="user" />
+  </EntityType>
+  <EntityType Name="promotion">
+    <Key>
+      <PropertyRef Name="idPromotion" />
+    </Key>
+    <Property Name="idPromotion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateDebut" Type="DateTime" />
+    <Property Name="dateFin" Type="DateTime" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="idService" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FKnq9xfo1dq6aylhijt5828r9dk" FromRole="promotion" ToRole="aspnetuser" />
+    <NavigationProperty Name="service" Relationship="easymissionModel.promotion_ibfk_1" FromRole="promotion" ToRole="service" />
+  </EntityType>
+  <EntityType Name="reclamation">
+    <Key>
+      <PropertyRef Name="idReclamtion" />
+    </Key>
+    <Property Name="idReclamtion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateSubmit" Type="DateTime" />
+    <Property Name="sujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="reclamationPath" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="idUserRec" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FKkkykscqnjm68fd039vxudbq0f" FromRole="reclamation" ToRole="aspnetuser" />
+    <NavigationProperty Name="aspnetuser1" Relationship="easymissionModel.reclamation_ibfk_1" FromRole="reclamation" ToRole="aspnetuser" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="idService" />
+    </Key>
+    <Property Name="idService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categorieService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nomService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FKmpi7cc7kgfta4euxfipq5g37t" FromRole="service" ToRole="aspnetuser" />
+    <NavigationProperty Name="feedbacks" Relationship="easymissionModel.feedback_ibfk_1" FromRole="service" ToRole="feedback" />
+    <NavigationProperty Name="offres" Relationship="easymissionModel.offre_ibfk_2" FromRole="service" ToRole="offre" />
+    <NavigationProperty Name="promotions" Relationship="easymissionModel.promotion_ibfk_1" FromRole="service" ToRole="promotion" />
+  </EntityType>
+  <EntityType Name="sujet">
+    <Key>
+      <PropertyRef Name="idSujet" />
+    </Key>
+    <Property Name="idSujet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateSujet" Type="DateTime" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nomSujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="typeSujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="forum_idForum" Type="Int32" />
+    <Property Name="user_idUser" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.FKpogokcnqg60rk9cj5uco6ga0x" FromRole="sujet" ToRole="aspnetuser" />
+    <NavigationProperty Name="forum" Relationship="easymissionModel.FKfmg6vcrltpd7363yl7amhnjar" FromRole="sujet" ToRole="forum" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="competence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="payments" Relationship="easymissionModel.FKtbn2noipxylxg6vx9wk0xuec1" FromRole="user" ToRole="payment" />
+  </EntityType>
+  <Association Name="FK_aspnetuserclaims_aspnetusers_UserId">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.aspnetuserclaim" Role="aspnetuserclaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserclaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnetuserlogins_aspnetusers_UserId">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.aspnetuserlogin" Role="aspnetuserlogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserlogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="a">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.cv" Role="cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="candidature_ibfk_100">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.candidature" Role="candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="candidature">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="commentaire_ibfk_2">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="1" />
+    <End Type="easymissionModel.commentaire" Role="commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="commentaire">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_ibfk_2">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.feedback" Role="feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_name">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.cv" Role="cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKkkykscqnjm68fd039vxudbq0f">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.reclamation" Role="reclamation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="reclamation">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKmpi7cc7kgfta4euxfipq5g37t">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.service" Role="service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKnq9xfo1dq6aylhijt5828r9dk">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.promotion" Role="promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="promotion">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKpogokcnqg60rk9cj5uco6ga0x">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.sujet" Role="sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_1">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="reclamation_ibfk_1">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="0..1" />
+    <End Type="easymissionModel.reclamation" Role="reclamation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="reclamation">
+        <PropertyRef Name="idUserRec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="candidature_ibfk_200">
+    <End Type="easymissionModel.offre" Role="offre" Multiplicity="0..1" />
+    <End Type="easymissionModel.candidature" Role="candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="offre">
+        <PropertyRef Name="idOffre" />
+      </Principal>
+      <Dependent Role="candidature">
+        <PropertyRef Name="idOffre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_ibfk_1">
+    <End Type="easymissionModel.service" Role="service" Multiplicity="0..1" />
+    <End Type="easymissionModel.feedback" Role="feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_2">
+    <End Type="easymissionModel.service" Role="service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKtbn2noipxylxg6vx9wk0xuec1">
+    <End Type="easymissionModel.user" Role="user" Multiplicity="0..1" />
+    <End Type="easymissionModel.payment" Role="payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="promotion_ibfk_1">
+    <End Type="easymissionModel.service" Role="service" Multiplicity="1" />
+    <End Type="easymissionModel.promotion" Role="promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="promotion">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnetuserroles">
+    <End Type="easymissionModel.aspnetrole" Role="aspnetrole" Multiplicity="*" />
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="*" />
+  </Association>
+  <EntityType Name="forum">
+    <Key>
+      <PropertyRef Name="idForum" />
+    </Key>
+    <Property Name="idForum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomForum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DateSubmit" Type="DateTime" />
+    <Property Name="category" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="idUser" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="aspnetuser" Relationship="easymissionModel.aaaForum" FromRole="forum" ToRole="aspnetuser" />
+    <NavigationProperty Name="commentaires" Relationship="easymissionModel.commentaire_ibfk_1" FromRole="forum" ToRole="commentaire" />
+    <NavigationProperty Name="sujets" Relationship="easymissionModel.FKfmg6vcrltpd7363yl7amhnjar" FromRole="forum" ToRole="sujet" />
+  </EntityType>
+  <Association Name="aaaForum">
+    <End Type="easymissionModel.aspnetuser" Role="aspnetuser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="easymissionModel.forum" Role="forum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="forum">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="commentaire_ibfk_1">
+    <End Type="easymissionModel.forum" Role="forum" Multiplicity="1" />
+    <End Type="easymissionModel.commentaire" Role="commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="forum">
+        <PropertyRef Name="idForum" />
+      </Principal>
+      <Dependent Role="commentaire">
+        <PropertyRef Name="idForum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKfmg6vcrltpd7363yl7amhnjar">
+    <End Type="easymissionModel.forum" Role="forum" Multiplicity="0..1" />
+    <End Type="easymissionModel.sujet" Role="sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="forum">
+        <PropertyRef Name="idForum" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="forum_idForum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,68 @@
+﻿@model EasyMission.Domaine.aspnetuser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="body-content clearfix">
+
+    <div class="bg-color2">
+        <div class="container">
+            <div class="col-md-3 col-sm-3">
+
+                <div class="block-section text-center ">
+                    <input type="file" name="FileUpload" />
+                    <img src="~/Images/@ViewData["Picture"] " class="img-rounded" alt="">
+                    <div class="white-space-20"></div>
+                    <h4>@ViewData["UserName"]</h4>
+                    <div class="white-space-20"></div>
+                     
+                    <div class="white-space-20"></div>
+                    <a href="/Cv/Create" class="btn  btn-line soft  btn-theme btn-pill btn-block">Build Resume</a>
+                    <a href="/Cv" class="btn  btn-line soft  btn-theme btn-pill btn-block">Update Resume</a>
+
+                 </div>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <!-- Block side right -->
+                <div class="block-section box-side-account">
+                    <h3 class="no-margin-top">Account Information</h3>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-7">
+                           
+
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Last_Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-theme btn-t-primary">Update Profile</button>
+                                </div>
+
+                        </div>
+                    </div>
+                </div><!-- end Block side right -->
+            </div>
+
+        </div>
+
+    </div>
+</div><!--end body-content -->
+}

@@ -1,0 +1,72 @@
+﻿@model   IEnumerable<EasyMission.Domaine.promotion>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- blog block -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- blog list -->
+                    <div class="blog-list">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Promotion</th>
+                <th>Nombre Offre</th>
+                <th>Clients</th>
+                <th>Nombre offres</th>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model)
+{
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.description)</th>
+                <td>@Html.DisplayFor(modelItem =>item.service.offres.Count)</td>
+                <td>
+                @foreach (var item2 in item.service.offres)
+                {
+                   <p>@Html.DisplayFor(modelItem2 => item2.aspnetuser.Name)</p>
+                       
+                        <br />
+                    
+
+
+                }
+                </td>
+                <td>
+                @foreach (var item2 in item.service.offres)
+                {
+                    <p>Offre : @Html.DisplayFor(modelItem2 => item2.aspnetuser.offres.Count)</p>
+                        <br />
+
+
+
+                }
+                    </td>
+              
+              </tr>
+
+}
+        </tbody>
+
+    </table>
+
+                    </div><!-- end blog list -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog block -->
+</div><!--end body-content -->

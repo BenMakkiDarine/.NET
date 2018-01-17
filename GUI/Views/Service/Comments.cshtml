@@ -1,0 +1,61 @@
+﻿@model GUI.Models.feedBackComment
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <div class="body-content clearfix">
+
+    <!-- blog single post -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="blog-list">
+                        <div class="blog-desc-bottom">
+
+
+                            <!-- blog post profile -->
+                            <!-- list comments -->
+                            <div class="list-comments">
+                                <h4>Comments : @ViewData["Count"]</h4>
+                                <div class="white-space-10"></div>
+
+                                @foreach (var item in Model.feedbacks)
+            {
+                                    <div class="media post-comment">
+
+                                        <div class="media-body">
+                                            <div class="post-desc-comment">
+                                                <p>@Html.DisplayFor(modelItem => item.description)</p>
+                                                <p><strong class="margin-right-50">@Html.DisplayFor(modelItem => item.aspnetuser.Email)</strong> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div><!-- end list comments -->
+                            <!-- form comments -->
+
+
+                            <h4>Leave a FeedBack</h4>
+                            <div class="white-space-30"></div>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(x => x.feedback.description, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-t-primary btn-theme">Submit</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="easymissionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="candidature">
+    <Key>
+      <PropertyRef Name="idCandidature" />
+    </Key>
+    <Property Name="idCandidature" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dateSubmit" Type="DateTime" />
+    <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.FKqnf2cjc5d6nflh9ugu76y7f3s" FromRole="candidature" ToRole="user" />
+  </EntityType>
+  <EntityType Name="forum">
+    <Key>
+      <PropertyRef Name="idForum" />
+    </Key>
+    <Property Name="idForum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomForum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sujets" Relationship="Self.FKfmg6vcrltpd7363yl7amhnjar" FromRole="forum" ToRole="sujet" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="idPayment" />
+    </Key>
+    <Property Name="idPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="datePayment" Type="DateTime" />
+    <Property Name="valeur" Type="Single" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="services" Relationship="Self.FK77sebv8qwsg71t546s2bpamf2" FromRole="payment" ToRole="service" />
+    <NavigationProperty Name="user" Relationship="Self.FKtbn2noipxylxg6vx9wk0xuec1" FromRole="payment" ToRole="user" />
+  </EntityType>
+  <EntityType Name="promotion">
+    <Key>
+      <PropertyRef Name="idPromotion" />
+    </Key>
+    <Property Name="idPromotion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateDebut" Type="DateTime" />
+    <Property Name="dateFin" Type="DateTime" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="services" Relationship="Self.FK7s1gf29grmmefqi6husjmmta9" FromRole="promotion" ToRole="service" />
+    <NavigationProperty Name="user" Relationship="Self.FKnq9xfo1dq6aylhijt5828r9dk" FromRole="promotion" ToRole="user" />
+  </EntityType>
+  <EntityType Name="reclamation">
+    <Key>
+      <PropertyRef Name="idReclamtion" />
+    </Key>
+    <Property Name="idReclamtion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateSubmit" Type="DateTime" />
+    <Property Name="sujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="user" Relationship="Self.FKkkykscqnjm68fd039vxudbq0f" FromRole="reclamation" ToRole="user" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="idService" />
+    </Key>
+    <Property Name="idService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categorieService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nomService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="payment_idPayment" Type="Int32" />
+    <Property Name="promotion_idPromotion" Type="Int32" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="payment" Relationship="Self.FK77sebv8qwsg71t546s2bpamf2" FromRole="service" ToRole="payment" />
+    <NavigationProperty Name="promotion" Relationship="Self.FK7s1gf29grmmefqi6husjmmta9" FromRole="service" ToRole="promotion" />
+    <NavigationProperty Name="user" Relationship="Self.FKmpi7cc7kgfta4euxfipq5g37t" FromRole="service" ToRole="user" />
+  </EntityType>
+  <EntityType Name="sujet">
+    <Key>
+      <PropertyRef Name="idSujet" />
+    </Key>
+    <Property Name="idSujet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateSujet" Type="DateTime" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nomSujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="typeSujet" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="forum_idForum" Type="Int32" />
+    <Property Name="user_idUser" Type="Int32" />
+    <NavigationProperty Name="forum" Relationship="Self.FKfmg6vcrltpd7363yl7amhnjar" FromRole="sujet" ToRole="forum" />
+    <NavigationProperty Name="user" Relationship="Self.FKpogokcnqg60rk9cj5uco6ga0x" FromRole="sujet" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="competence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="candidatures" Relationship="Self.FKqnf2cjc5d6nflh9ugu76y7f3s" FromRole="user" ToRole="candidature" />
+    <NavigationProperty Name="payments" Relationship="Self.FKtbn2noipxylxg6vx9wk0xuec1" FromRole="user" ToRole="payment" />
+    <NavigationProperty Name="promotions" Relationship="Self.FKnq9xfo1dq6aylhijt5828r9dk" FromRole="user" ToRole="promotion" />
+    <NavigationProperty Name="reclamations" Relationship="Self.FKkkykscqnjm68fd039vxudbq0f" FromRole="user" ToRole="reclamation" />
+    <NavigationProperty Name="services" Relationship="Self.FKmpi7cc7kgfta4euxfipq5g37t" FromRole="user" ToRole="service" />
+    <NavigationProperty Name="sujets" Relationship="Self.FKpogokcnqg60rk9cj5uco6ga0x" FromRole="user" ToRole="sujet" />
+  </EntityType>
+  <Association Name="FKqnf2cjc5d6nflh9ugu76y7f3s">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="candidature" Type="Self.candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="candidature">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKfmg6vcrltpd7363yl7amhnjar">
+    <End Role="forum" Type="Self.forum" Multiplicity="0..1" />
+    <End Role="sujet" Type="Self.sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="forum">
+        <PropertyRef Name="idForum" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="forum_idForum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK77sebv8qwsg71t546s2bpamf2">
+    <End Role="payment" Type="Self.payment" Multiplicity="0..1" />
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payment">
+        <PropertyRef Name="idPayment" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="payment_idPayment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKtbn2noipxylxg6vx9wk0xuec1">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK7s1gf29grmmefqi6husjmmta9">
+    <End Role="promotion" Type="Self.promotion" Multiplicity="0..1" />
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="promotion">
+        <PropertyRef Name="idPromotion" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="promotion_idPromotion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKnq9xfo1dq6aylhijt5828r9dk">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="promotion" Type="Self.promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="promotion">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKkkykscqnjm68fd039vxudbq0f">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="reclamation" Type="Self.reclamation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="reclamation">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKmpi7cc7kgfta4euxfipq5g37t">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKpogokcnqg60rk9cj5uco6ga0x">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="sujet" Type="Self.sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="easymissionEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="candidatures" EntityType="Self.candidature" />
+    <EntitySet Name="fora" EntityType="Self.forum" />
+    <EntitySet Name="payments" EntityType="Self.payment" />
+    <EntitySet Name="promotions" EntityType="Self.promotion" />
+    <EntitySet Name="reclamations" EntityType="Self.reclamation" />
+    <EntitySet Name="services" EntityType="Self.service" />
+    <EntitySet Name="sujets" EntityType="Self.sujet" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FKqnf2cjc5d6nflh9ugu76y7f3s" Association="Self.FKqnf2cjc5d6nflh9ugu76y7f3s">
+      <End Role="user" EntitySet="users" />
+      <End Role="candidature" EntitySet="candidatures" />
+    </AssociationSet>
+    <AssociationSet Name="FKfmg6vcrltpd7363yl7amhnjar" Association="Self.FKfmg6vcrltpd7363yl7amhnjar">
+      <End Role="forum" EntitySet="fora" />
+      <End Role="sujet" EntitySet="sujets" />
+    </AssociationSet>
+    <AssociationSet Name="FK77sebv8qwsg71t546s2bpamf2" Association="Self.FK77sebv8qwsg71t546s2bpamf2">
+      <End Role="payment" EntitySet="payments" />
+      <End Role="service" EntitySet="services" />
+    </AssociationSet>
+    <AssociationSet Name="FKtbn2noipxylxg6vx9wk0xuec1" Association="Self.FKtbn2noipxylxg6vx9wk0xuec1">
+      <End Role="user" EntitySet="users" />
+      <End Role="payment" EntitySet="payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK7s1gf29grmmefqi6husjmmta9" Association="Self.FK7s1gf29grmmefqi6husjmmta9">
+      <End Role="promotion" EntitySet="promotions" />
+      <End Role="service" EntitySet="services" />
+    </AssociationSet>
+    <AssociationSet Name="FKnq9xfo1dq6aylhijt5828r9dk" Association="Self.FKnq9xfo1dq6aylhijt5828r9dk">
+      <End Role="user" EntitySet="users" />
+      <End Role="promotion" EntitySet="promotions" />
+    </AssociationSet>
+    <AssociationSet Name="FKkkykscqnjm68fd039vxudbq0f" Association="Self.FKkkykscqnjm68fd039vxudbq0f">
+      <End Role="user" EntitySet="users" />
+      <End Role="reclamation" EntitySet="reclamations" />
+    </AssociationSet>
+    <AssociationSet Name="FKmpi7cc7kgfta4euxfipq5g37t" Association="Self.FKmpi7cc7kgfta4euxfipq5g37t">
+      <End Role="user" EntitySet="users" />
+      <End Role="service" EntitySet="services" />
+    </AssociationSet>
+    <AssociationSet Name="FKpogokcnqg60rk9cj5uco6ga0x" Association="Self.FKpogokcnqg60rk9cj5uco6ga0x">
+      <End Role="user" EntitySet="users" />
+      <End Role="sujet" EntitySet="sujets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

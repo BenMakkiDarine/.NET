@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9846DFE-A0BE-4F45-A46F-EB3548DC68EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyMission.Domaine</RootNamespace>
+    <AssemblyName>EasyMission.Domaine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspnetrole.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnetuser.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnetuserclaim.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnetuserlogin.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="candidature.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="commentaire.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cv.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__migrationhistory.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EasyMissionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyMissionModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EasyMissionModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EasyMissionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyMissionModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="feedback.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="forum.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="offre.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="payment.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="promotion.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reclamation.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="service.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sujet.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>EasyMissionModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EasyMissionModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EasyMissionModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EasyMissionModel.edmx.diagram">
+      <DependentUpon>EasyMissionModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EasyMissionModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EasyMissionModel.edmx</DependentUpon>
+      <LastGenOutput>EasyMissionModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EasyMissionModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EasyMissionModel.edmx</DependentUpon>
+      <LastGenOutput>EasyMissionModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

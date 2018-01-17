@@ -1,0 +1,109 @@
+﻿@model IEnumerable<EasyMission.Domaine.offre>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <div class="bg-color2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+
+                    <!-- box listing -->
+                    <div class="block-section-sm box-list-area">
+
+                        <!-- desc top -->
+                        <div class="row hidden-xs">
+                            <div class="col-sm-6  ">
+                                <p><strong class="color-black">List of Services</strong></p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="text-right">
+                                    Services 1 to 10 of 578
+                                </p>
+                            </div>
+                        </div><!-- end desc top -->
+                        @foreach (var item in Model)
+                        {
+                        <!-- item list -->
+                            <div class="box-list">
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-md-1 hidden-sm hidden-xs"><div class="img-item"><img src="./assets/theme/images/company-logo/1.jpg" alt=""></div></div>
+                                        <div class="col-md-11">
+                                            <h3 class="no-margin-top"><a href="/Offre/Details/@Html.DisplayFor(modelItem => item.idOffre)" class="">@Html.DisplayFor(modelItem => item.title) <i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+                                            <h5><span class="color-black">@Html.DisplayFor(modelItem => item.budget) DT</span> - <span class="color-white-mute">@Html.DisplayFor(modelItem => item.location)</span></h5>
+                                            <p class="text-truncate ">@Html.DisplayFor(modelItem => item.description)</p>
+                                            <a href="/Offre/Delete/@Html.DisplayFor(modelItem => item.idOffre)" class="btn btn-theme btn-xs btn-default">Delete</a>
+
+                                            <div>
+                                                <span class="color-white-mute">16 hours ago</span> -
+                                                <a href="#need-login" data-toggle="modal" class="btn btn-xs btn-theme btn-default">save job</a> -
+                                                <a href="#modal-email" data-toggle="modal" class="btn btn-theme btn-xs btn-default">email</a> -
+                                                <a href="#" class="btn btn-theme btn-xs btn-default">more ...</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end item list -->
+
+
+
+
+                            </div>
+                        }
+
+
+
+
+                        <!-- pagination -->
+                        <nav>
+                            <ul class="pagination pagination-theme  no-margin">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&larr;</span>
+                                    </a>
+                                </li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><span>...</span></li>
+                                <li><a href="#">50</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav><!-- pagination -->
+
+                    </div><!-- end box listing -->
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4d3487f692b0490aa90e298c796fad67" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="easymissionModel.C__migrationhistory" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="easymissionModel.aspnetrole" Width="1.5" PointX="0.75" PointY="17.25" />
+        <EntityTypeShape EntityType="easymissionModel.aspnetuserclaim" Width="1.5" PointX="5.25" PointY="30.625" />
+        <EntityTypeShape EntityType="easymissionModel.aspnetuserlogin" Width="1.5" PointX="5.25" PointY="36.625" />
+        <EntityTypeShape EntityType="easymissionModel.aspnetuser" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="easymissionModel.candidature" Width="1.5" PointX="9.75" PointY="21" />
+        <EntityTypeShape EntityType="easymissionModel.commentaire" Width="1.5" PointX="5.25" PointY="17" />
+        <EntityTypeShape EntityType="easymissionModel.cv" Width="1.5" PointX="5.25" PointY="10.75" />
+        <EntityTypeShape EntityType="easymissionModel.feedback" Width="1.5" PointX="7.5" PointY="17.625" />
+        <EntityTypeShape EntityType="easymissionModel.offre" Width="1.5" PointX="7.5" PointY="21.125" />
+        <EntityTypeShape EntityType="easymissionModel.payment" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="easymissionModel.promotion" Width="1.5" PointX="10.5" PointY="17.5" />
+        <EntityTypeShape EntityType="easymissionModel.reclamation" Width="1.5" PointX="5.25" PointY="33.375" />
+        <EntityTypeShape EntityType="easymissionModel.service" Width="1.5" PointX="5.25" PointY="19.875" />
+        <EntityTypeShape EntityType="easymissionModel.sujet" Width="1.5" PointX="8.25" PointY="13.75" />
+        <EntityTypeShape EntityType="easymissionModel.user" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="easymissionModel.FK_aspnetuserclaims_aspnetusers_UserId" />
+        <AssociationConnector Association="easymissionModel.FK_aspnetuserlogins_aspnetusers_UserId" />
+        <AssociationConnector Association="easymissionModel.a" />
+        <AssociationConnector Association="easymissionModel.candidature_ibfk_100" />
+        <AssociationConnector Association="easymissionModel.commentaire_ibfk_2" />
+        <AssociationConnector Association="easymissionModel.feedback_ibfk_2" />
+        <AssociationConnector Association="easymissionModel.fk_name" />
+        <AssociationConnector Association="easymissionModel.FKkkykscqnjm68fd039vxudbq0f" />
+        <AssociationConnector Association="easymissionModel.FKmpi7cc7kgfta4euxfipq5g37t" />
+        <AssociationConnector Association="easymissionModel.FKnq9xfo1dq6aylhijt5828r9dk" />
+        <AssociationConnector Association="easymissionModel.FKpogokcnqg60rk9cj5uco6ga0x" />
+        <AssociationConnector Association="easymissionModel.offre_ibfk_1" />
+        <AssociationConnector Association="easymissionModel.reclamation_ibfk_1" />
+        <AssociationConnector Association="easymissionModel.candidature_ibfk_200" />
+        <AssociationConnector Association="easymissionModel.feedback_ibfk_1" />
+        <AssociationConnector Association="easymissionModel.offre_ibfk_2" />
+        <AssociationConnector Association="easymissionModel.FKtbn2noipxylxg6vx9wk0xuec1" />
+        <AssociationConnector Association="easymissionModel.promotion_ibfk_1" />
+        <AssociationConnector Association="easymissionModel.aspnetuserroles" />
+        <EntityTypeShape EntityType="easymissionModel.forum" Width="1.5" PointX="5.25" PointY="23.75" />
+        <AssociationConnector Association="easymissionModel.aaaForum" />
+        <AssociationConnector Association="easymissionModel.commentaire_ibfk_1" />
+        <AssociationConnector Association="easymissionModel.FKfmg6vcrltpd7363yl7amhnjar" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

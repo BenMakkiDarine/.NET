@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EasyMission.Domaine.candidature>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- blog block -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- blog list -->
+                    <div class="blog-list">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date Candidature</th>
+                <th>User</th>
+                <th>Status</th>
+                <th class="text-right">Actions</th>
+                <th class="text-right">visio-conférence</th>
+
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model)
+{
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.idCandidature)</th>
+                <td>@Html.DisplayFor(modelItem => item.dateSubmit)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.aspnetuser.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.status)</td>
+
+                <td class="text-right"><a href="/Candidature/Delete/@Html.DisplayFor(modelItem => item.idCandidature)" class="btn btn-theme btn-xs btn-default">Delete</a></td>
+                <td class="text-right"><a href="/Candidature/Edit/@Html.DisplayFor(modelItem => item.idCandidature)" class="btn btn-theme btn-xs btn-default">Edit</a></td>
+
+              </tr>
+
+}
+        </tbody>
+
+    </table>
+
+                    </div><!-- end blog list -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog block -->
+</div><!--end body-content -->

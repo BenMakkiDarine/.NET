@@ -1,0 +1,66 @@
+﻿@model EasyMission.Domaine.offre
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="body-content clearfix">
+
+    <div class="bg-color2 block-section line-bottom">
+        <div class="container">
+            <h1 class="text-center no-margin">Post a Job</h1>
+        </div>
+    </div>
+
+    <div class="bg-color1 block-section line-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <!-- form post a job -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label>Job title</label>
+                            @Html.EditorFor(x => x.title, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="form-group">
+                            <label>Job description</label>
+                            <div class="color-white-mute"><small>Describe the responsibilities of this job, required work experience, skills, or education.</small></div>
+                            @Html.TextAreaFor(x => x.description)
+                            <small class="color-white-mute">Formatting Options:    ##heading      *bold*          _italic_          * bulleted list</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Locations (optional)</label>
+                            @Html.EditorFor(x => x.location, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+                  <div class="form-group">
+                            <label>Type Offre</label>
+                            @Html.EditorFor(x => x.typeOffre, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+
+                     <div class="form-group">
+                            <label>Budget</label>
+                            @Html.EditorFor(x => x.budget, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+             <div class="form-group">
+             <label>Service</label>
+                    @Html.DropDownListFor(x => x.idService,(SelectList)ViewData["Category"],"-----Select a service-------")
+                                                </div>
+                        <!-- checkboxs -->
+                       
+
+
+                     
+                       
+
+                        <div class="form-group ">
+                            <button class="btn btn-t-primary btn-theme">Continue</button>
+                        </div>
+
+
+}                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end body-content -->

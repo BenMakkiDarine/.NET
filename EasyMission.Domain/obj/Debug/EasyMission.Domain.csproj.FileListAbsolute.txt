@@ -1,0 +1,8 @@
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\obj\Debug\EasyMission.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\bin\Debug\EasyMission.Domain.dll.config
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\bin\Debug\EasyMission.Domain.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\bin\Debug\EasyMission.Domain.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\obj\Debug\EasyMission.Domain.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\obj\Debug\EasyMission.Domain.pdb
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Tibou\Documents\Visual Studio 2015\Projects\EasyMission\EasyMission.Domain\bin\Debug\EntityFramework.xml

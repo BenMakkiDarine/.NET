@@ -1,0 +1,65 @@
+﻿@model EasyMission.Domaine.cv
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}<div class="body-content clearfix">
+
+    <div class="bg-color2">
+        <div class="container">
+            <div class="col-md-3 col-sm-3">
+
+                <div class="block-section text-center ">
+                  
+                    <img src="./assets/theme/images/people/4.jpg" class="img-rounded" alt="">
+                    <div class="white-space-20"></div>
+                    <h4>@ViewData["UserName"]</h4>
+                    <div class="white-space-20"></div>
+                   
+                          </div>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <!-- Block side right -->
+                <div class="block-section box-side-account">
+                    <h3 class="no-margin-top">CV</h3>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-7">
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.HiddenFor(model=>model.idCv)
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+
+
+
+
+                                </div>
+                                    <div class="form-group">
+                                        <label>Specialite</label>
+                                        @Html.EditorFor(model => model.specialite, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.specialite, "", new { @class = "text-danger" })
+
+
+                                         </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+
+
+                                          </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-theme btn-t-primary">Update Profile</button>
+                                    </div>
+                            }
+                        </div>
+                    </div>
+                </div><!-- end Block side right -->
+            </div>
+        </div>
+    </div>
+</div><!--end body-content -->

@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="easymissionModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__migrationhistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="longblob" Nullable="false" />
+    <Property Name="ProductVersion" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnetroles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnetuserclaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="longtext" />
+    <Property Name="ClaimValue" Type="longtext" />
+  </EntityType>
+  <EntityType Name="aspnetuserlogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnetuserroles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnetusers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="128" />
+    <Property Name="EmailConfirmed" Type="bool" Nullable="false" />
+    <Property Name="PasswordHash" Type="longtext" />
+    <Property Name="SecurityStamp" Type="longtext" />
+    <Property Name="PhoneNumber" Type="longtext" />
+    <Property Name="PhoneNumberConfirmed" Type="bool" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bool" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" Precision="0" />
+    <Property Name="LockoutEnabled" Type="bool" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="longtext" />
+    <Property Name="Last_Name" Type="longtext" />
+    <Property Name="ImagePath" Type="longtext" />
+  </EntityType>
+  <EntityType Name="candidature">
+    <Key>
+      <PropertyRef Name="idCandidature" />
+    </Key>
+    <Property Name="idCandidature" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idOffre" Type="int" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" />
+    <Property Name="description" Type="varchar" MaxLength="250" />
+    <Property Name="price" Type="float" />
+    <Property Name="dateSubmit" Type="datetime" Precision="0" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="cvPAth" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="commentaire">
+    <Key>
+      <PropertyRef Name="commentaireId" />
+    </Key>
+    <Property Name="commentaireId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idForum" Type="int" Nullable="false" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="idCv" />
+    </Key>
+    <Property Name="idCv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" />
+    <Property Name="specialite" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="user_idUser" Type="varchar" MaxLength="255" />
+    <Property Name="location" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="idFeedBack" />
+    </Key>
+    <Property Name="idFeedBack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="250" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" />
+    <Property Name="idService" Type="int" />
+  </EntityType>
+  <EntityType Name="forum">
+    <Key>
+      <PropertyRef Name="idForum" />
+    </Key>
+    <Property Name="idForum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomForum" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="DateSubmit" Type="datetime" Precision="0" />
+    <Property Name="category" Type="varchar" MaxLength="500" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="idOffre" />
+    </Key>
+    <Property Name="idOffre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="typeOffre" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="budget" Type="float" Nullable="false" />
+    <Property Name="idUser" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="idService" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="idPayment" />
+    </Key>
+    <Property Name="idPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datePayment" Type="datetime" Precision="0" />
+    <Property Name="valeur" Type="float" />
+    <Property Name="user_idUser" Type="int" />
+  </EntityType>
+  <EntityType Name="promotion">
+    <Key>
+      <PropertyRef Name="idPromotion" />
+    </Key>
+    <Property Name="idPromotion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateDebut" Type="datetime" Precision="0" />
+    <Property Name="dateFin" Type="datetime" Precision="0" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="user_idUser" Type="varchar" MaxLength="11" />
+    <Property Name="idService" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reclamation">
+    <Key>
+      <PropertyRef Name="idReclamtion" />
+    </Key>
+    <Property Name="idReclamtion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateSubmit" Type="datetime" Precision="0" />
+    <Property Name="sujet" Type="varchar" MaxLength="255" />
+    <Property Name="user_idUser" Type="varchar" MaxLength="255" />
+    <Property Name="reclamationPath" Type="varchar" MaxLength="250" />
+    <Property Name="idUserRec" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="idService" />
+    </Key>
+    <Property Name="idService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categorieService" Type="varchar" MaxLength="255" />
+    <Property Name="nomService" Type="varchar" MaxLength="255" />
+    <Property Name="user_idUser" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sujet">
+    <Key>
+      <PropertyRef Name="idSujet" />
+    </Key>
+    <Property Name="idSujet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateSujet" Type="datetime" Precision="0" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="nomSujet" Type="varchar" MaxLength="255" />
+    <Property Name="typeSujet" Type="varchar" MaxLength="255" />
+    <Property Name="forum_idForum" Type="int" />
+    <Property Name="user_idUser" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="competence" Type="varchar" MaxLength="255" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="login" Type="varchar" MaxLength="255" />
+    <Property Name="nom" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="prenom" Type="varchar" MaxLength="255" />
+    <Property Name="role" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="a">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cv" Type="Self.cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aaaForum">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="forum" Type="Self.forum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="forum">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="candidature_ibfk_100">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="candidature" Type="Self.candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="candidature">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="candidature_ibfk_200">
+    <End Role="offre" Type="Self.offre" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="candidature" Type="Self.candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="offre">
+        <PropertyRef Name="idOffre" />
+      </Principal>
+      <Dependent Role="candidature">
+        <PropertyRef Name="idOffre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="commentaire_ibfk_1">
+    <End Role="forum" Type="Self.forum" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="commentaire" Type="Self.commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="forum">
+        <PropertyRef Name="idForum" />
+      </Principal>
+      <Dependent Role="commentaire">
+        <PropertyRef Name="idForum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="commentaire_ibfk_2">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="commentaire" Type="Self.commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="commentaire">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_ibfk_1">
+    <End Role="service" Type="Self.service" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="feedback_ibfk_2">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnetuserclaims_aspnetusers_UserId">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="aspnetuserclaims" Type="Self.aspnetuserclaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserclaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnetuserlogins_aspnetusers_UserId">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="aspnetuserlogins" Type="Self.aspnetuserlogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserlogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnetuserroles_aspnetroles_RoleId">
+    <End Role="aspnetroles" Type="Self.aspnetroles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="aspnetuserroles" Type="Self.aspnetuserroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetroles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserroles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aspnetuserroles_aspnetusers_UserId">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="aspnetuserroles" Type="Self.aspnetuserroles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="aspnetuserroles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_name">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cv" Type="Self.cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKfmg6vcrltpd7363yl7amhnjar">
+    <End Role="forum" Type="Self.forum" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sujet" Type="Self.sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="forum">
+        <PropertyRef Name="idForum" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="forum_idForum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKkkykscqnjm68fd039vxudbq0f">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reclamation" Type="Self.reclamation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="reclamation">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKmpi7cc7kgfta4euxfipq5g37t">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKnq9xfo1dq6aylhijt5828r9dk">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="promotion" Type="Self.promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="promotion">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKpogokcnqg60rk9cj5uco6ga0x">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sujet" Type="Self.sujet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sujet">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKtbn2noipxylxg6vx9wk0xuec1">
+    <End Role="user" Type="Self.user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="user_idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_1">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_2">
+    <End Role="service" Type="Self.service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="promotion_ibfk_1">
+    <End Role="service" Type="Self.service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="promotion" Type="Self.promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="idService" />
+      </Principal>
+      <Dependent Role="promotion">
+        <PropertyRef Name="idService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="reclamation_ibfk_1">
+    <End Role="aspnetusers" Type="Self.aspnetusers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="reclamation" Type="Self.reclamation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnetusers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="reclamation">
+        <PropertyRef Name="idUserRec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="easymissionModelStoreContainer">
+    <EntitySet Name="__migrationhistory" EntityType="Self.__migrationhistory" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="aspnetroles" EntityType="Self.aspnetroles" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="aspnetuserclaims" EntityType="Self.aspnetuserclaims" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="aspnetuserlogins" EntityType="Self.aspnetuserlogins" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="aspnetuserroles" EntityType="Self.aspnetuserroles" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="aspnetusers" EntityType="Self.aspnetusers" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="candidature" EntityType="Self.candidature" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="commentaire" EntityType="Self.commentaire" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="cv" EntityType="Self.cv" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="forum" EntityType="Self.forum" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="offre" EntityType="Self.offre" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="payment" EntityType="Self.payment" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="promotion" EntityType="Self.promotion" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="reclamation" EntityType="Self.reclamation" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="sujet" EntityType="Self.sujet" Schema="easymission" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="easymission" store:Type="Tables" />
+    <AssociationSet Name="a" Association="Self.a">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="cv" EntitySet="cv" />
+    </AssociationSet>
+    <AssociationSet Name="aaaForum" Association="Self.aaaForum">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="forum" EntitySet="forum" />
+    </AssociationSet>
+    <AssociationSet Name="candidature_ibfk_100" Association="Self.candidature_ibfk_100">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="candidature" EntitySet="candidature" />
+    </AssociationSet>
+    <AssociationSet Name="candidature_ibfk_200" Association="Self.candidature_ibfk_200">
+      <End Role="offre" EntitySet="offre" />
+      <End Role="candidature" EntitySet="candidature" />
+    </AssociationSet>
+    <AssociationSet Name="commentaire_ibfk_1" Association="Self.commentaire_ibfk_1">
+      <End Role="forum" EntitySet="forum" />
+      <End Role="commentaire" EntitySet="commentaire" />
+    </AssociationSet>
+    <AssociationSet Name="commentaire_ibfk_2" Association="Self.commentaire_ibfk_2">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="commentaire" EntitySet="commentaire" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_ibfk_1" Association="Self.feedback_ibfk_1">
+      <End Role="service" EntitySet="service" />
+      <End Role="feedback" EntitySet="feedback" />
+    </AssociationSet>
+    <AssociationSet Name="feedback_ibfk_2" Association="Self.feedback_ibfk_2">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="feedback" EntitySet="feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnetuserclaims_aspnetusers_UserId" Association="Self.FK_aspnetuserclaims_aspnetusers_UserId">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="aspnetuserclaims" EntitySet="aspnetuserclaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnetuserlogins_aspnetusers_UserId" Association="Self.FK_aspnetuserlogins_aspnetusers_UserId">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="aspnetuserlogins" EntitySet="aspnetuserlogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnetuserroles_aspnetroles_RoleId" Association="Self.FK_aspnetuserroles_aspnetroles_RoleId">
+      <End Role="aspnetroles" EntitySet="aspnetroles" />
+      <End Role="aspnetuserroles" EntitySet="aspnetuserroles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aspnetuserroles_aspnetusers_UserId" Association="Self.FK_aspnetuserroles_aspnetusers_UserId">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="aspnetuserroles" EntitySet="aspnetuserroles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_name" Association="Self.fk_name">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="cv" EntitySet="cv" />
+    </AssociationSet>
+    <AssociationSet Name="FKfmg6vcrltpd7363yl7amhnjar" Association="Self.FKfmg6vcrltpd7363yl7amhnjar">
+      <End Role="forum" EntitySet="forum" />
+      <End Role="sujet" EntitySet="sujet" />
+    </AssociationSet>
+    <AssociationSet Name="FKkkykscqnjm68fd039vxudbq0f" Association="Self.FKkkykscqnjm68fd039vxudbq0f">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="reclamation" EntitySet="reclamation" />
+    </AssociationSet>
+    <AssociationSet Name="FKmpi7cc7kgfta4euxfipq5g37t" Association="Self.FKmpi7cc7kgfta4euxfipq5g37t">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="service" EntitySet="service" />
+    </AssociationSet>
+    <AssociationSet Name="FKnq9xfo1dq6aylhijt5828r9dk" Association="Self.FKnq9xfo1dq6aylhijt5828r9dk">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="promotion" EntitySet="promotion" />
+    </AssociationSet>
+    <AssociationSet Name="FKpogokcnqg60rk9cj5uco6ga0x" Association="Self.FKpogokcnqg60rk9cj5uco6ga0x">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="sujet" EntitySet="sujet" />
+    </AssociationSet>
+    <AssociationSet Name="FKtbn2noipxylxg6vx9wk0xuec1" Association="Self.FKtbn2noipxylxg6vx9wk0xuec1">
+      <End Role="user" EntitySet="user" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_1" Association="Self.offre_ibfk_1">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_2" Association="Self.offre_ibfk_2">
+      <End Role="service" EntitySet="service" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="promotion_ibfk_1" Association="Self.promotion_ibfk_1">
+      <End Role="service" EntitySet="service" />
+      <End Role="promotion" EntitySet="promotion" />
+    </AssociationSet>
+    <AssociationSet Name="reclamation_ibfk_1" Association="Self.reclamation_ibfk_1">
+      <End Role="aspnetusers" EntitySet="aspnetusers" />
+      <End Role="reclamation" EntitySet="reclamation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

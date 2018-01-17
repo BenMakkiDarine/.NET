@@ -1,0 +1,99 @@
+﻿@model GUI.Models.Details
+
+
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+<div class="body-content clearfix">
+
+    <!-- blog single post -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="blog-list">
+
+                        <!-- blog details -->
+                        <div class="blog-item">
+
+                            <h2 class="blog-title"><a href="blog_single_post.html">@Html.DisplayFor(model=>model.Forum.nomForum)<br /><small>@Html.DisplayFor(model => model.Forum.category)</small></a></h2>
+                            <div class="blog-meta">@Html.DisplayFor(model => model.Forum.DateSubmit)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           @if (ViewData["Delete"].Equals("oui"))
+                           {
+                           <a href="/Forum/Delete/@Html.DisplayFor(model=>model.Forum.idForum)" class="btn btn-theme btn-xs btn-default">Remove</a>
+                            <a href="/Forum/Edit/@Html.DisplayFor(model=>model.Forum.idForum)" class="btn btn-theme btn-xs btn-default">Edit</a>
+
+                           }
+
+                            </div>
+                          
+                            <h4>Description</h4>
+                            <p> @Html.DisplayFor(model => model.Forum.description)</p>
+
+
+                            <div class="blog-desc-bottom">
+
+
+                                <!-- blog post profile -->
+                               
+                                <!-- list comments -->
+                                <div class="list-comments">
+                                    <h4>Comments : @ViewData["Count"]</h4>
+                                    <div class="white-space-10"></div>
+                                   
+                                  @foreach (var item in Model.commentaires)
+                                  {
+                                    <div class="media post-comment">
+                                       
+                                        <div class="media-body">
+                                            <div class="post-desc-comment">
+                                                <p>@Html.DisplayFor(modelItem => item.message)</p>
+                                                <p><strong class="margin-right-50">@Html.DisplayFor(modelItem => item.aspnetuser.Email)</strong> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  }
+                                </div><!-- end list comments -->
+                                <!-- form comments -->
+
+
+                                <h4>Leave a Comment</h4>
+                                <div class="white-space-30"></div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+                @Html.TextAreaFor(x => x.Commentaire.message, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-t-primary btn-theme">Modifier</button>
+    </div>
+}
+
+
+
+                            </div>
+                        </div><!-- end blog details -->
+
+
+
+                    </div>
+
+                    <!-- pager -->
+                    <nav>
+                        <ul class="pager">
+                            <li class="previous"><a href="#" class="btn-theme btn-lg"><span aria-hidden="true" class="hidden-xs">&larr;</span> Prev Post</a></li>
+                            <li class="next"><a href="#" class="btn-theme btn-lg">Next Post <span aria-hidden="true" class="hidden-xs">&rarr;</span></a></li>
+                        </ul>
+                    </nav> <!-- end pager -->
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog single post -->
+</div><!--end body-content -->

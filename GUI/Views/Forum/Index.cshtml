@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EasyMission.Domaine.forum>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <!-- body-content -->
+<div class="body-content clearfix">
+
+    <!-- blog block -->
+    <div class="bg-color1 block-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <!-- blog list -->
+                    <div class="blog-list">
+@foreach (var item in Model)
+{
+
+                        <!-- blog item -->
+                        <div class="blog-item">
+                            <h2 class="blog-title"><a href="blog_single_post.html">@Html.DisplayFor(modelItem => item.nomForum) <br /><small>@Html.DisplayFor(modelItem => item.category)</small></a></h2>
+                            <div class="blog-meta">@Html.DisplayFor(modelItem => item.DateSubmit)
+</div>
+                            <!--<div class="blog-img">
+                              <img src="./assets/theme/images/home-bg.jpg" alt="" class="img-full ">
+
+                            </div>-->
+                            <p>@Html.DisplayFor(modelItem => item.description) </p>
+                            <p class="blog-links"><a href="/Forum/Details/@Html.DisplayFor(modelItem => item.idForum)" class="btn btn-theme btn-line soft ">Continue Reading &nbsp; &rarr;</a></p>
+                        </div><!-- end blog item -->
+}
+                    </div><!-- end blog list -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><!-- end blog block -->
+</div><!--end body-content -->

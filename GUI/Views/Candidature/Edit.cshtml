@@ -1,0 +1,67 @@
+﻿@model EasyMission.Domaine.candidature
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!-- body-content -->
+<div class="body-content clearfix">
+
+    <div class="bg-color2 block-section line-bottom">
+        <div class="container">
+            <h1 class="text-center no-margin">Edit Candidature</h1>
+        </div>
+    </div>
+
+    <div class="bg-color1 block-section line-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <!-- form post a job -->
+
+@using (Html.BeginForm("Edit", "Candidature", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>Your Resume</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <span class="btn btn-default btn-theme btn-file">
+                                        <input type="file" name="FileUpload" />
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control form-flat" readonly>
+                            </div>
+                            <small>Upload your CV/resume. Max. file size: 24 MB.</small>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group ">
+                            <button class="btn btn-t-primary btn-theme">Edit</button>
+                        </div>
+
+
+}                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end body-content -->
